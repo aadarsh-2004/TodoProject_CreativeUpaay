@@ -1,7 +1,6 @@
 import "./App.css";
 import Slidebar from "./component/Slidebar";
 import Navbar from "./component/Navbar";
-
 import TaskBoard from "./component/TaskBoard";
 import { useState, useEffect } from "react";
 import { DndProvider } from "react-dnd";
@@ -13,20 +12,24 @@ import { onAuthStateChanged } from "firebase/auth";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null); // Store the user object here
 
-  // Cheking User authentication
+  // Checking User authentication and fetching user details
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setIsAuthenticated(true);
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser); // Set user object when logged in
       } else {
-        setIsAuthenticated(false);
+        setUser(null); // Clear user object when logged out
       }
     });
+
+    // Cleanup function to unsubscribe when component is unmounted
+    return () => unsubscribe();
   }, []);
-  if (!isAuthenticated) {
-    return <Login setIsAuthenticated={setIsAuthenticated} />;
+
+  if (!user) {
+    return <Login setUser={setUser} />; // Pass setUser to Login component
   }
 
   // Toggle sidebar visibility
@@ -44,8 +47,8 @@ function App() {
             isSidebarOpen ? "ml-28" : "ml-0"
           }`}
         >
-          {/* Navbar component Calling */}
-          <Navbar toggleSidebar={toggleSidebar} />
+          {/* Navbar component Calling with user */}
+          <Navbar user={user} toggleSidebar={toggleSidebar} />
 
           {/* Taskboard component Calling */}
           <DndProvider backend={HTML5Backend}>
