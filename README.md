@@ -52,9 +52,20 @@ You can access the deployed version and see the features in action.
 
 ---
 
-## Video Demo:
+## ScreenShots:
 
-A **video demo** showcasing the functionality of the application is attached. Please refer to it for a walkthrough of the features.
+![{684394F0-167B-4A50-A268-7E090718908C}](https://github.com/user-attachments/assets/eaed39d3-c4ba-40c2-b23f-389127979114)
+![{DEAB2803-2B9A-450D-9FE9-E29D5113F603}](https://github.com/user-attachments/assets/2889c1b4-090b-4b81-a079-1cf077622a34)
+![{CFC9FD69-91C2-43D6-9941-CC1E431CB38F}](https://github.com/user-attachments/assets/910ab2cb-0f17-4113-8bb0-e00f60286a43)
+![{18B29B68-E25C-42B1-B750-99C352CB786B}](https://github.com/user-attachments/assets/1da49eab-9ac1-46ce-a9fb-4474ae3ab3e1)
+![{4B19377D-DCAC-4462-B04E-53A841DA14B6}](https://github.com/user-attachments/assets/a228e1c1-513f-4ce3-bc74-83e62cad32e6)
+![{3F350286-9BA6-43EA-AFF1-3EB7D6DD74B7}](https://github.com/user-attachments/assets/1144164b-c848-4e28-bc4b-5db420051a7f)
+
+
+
+
+
+
 
 ---
 
